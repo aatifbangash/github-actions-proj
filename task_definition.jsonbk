@@ -1,0 +1,136 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": "arn:aws:iam::<AWS_ACCOUNT_ID>:role/myECcsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "environmentFiles": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/orangutancluster",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "orangutancluster-container-log-stream"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 5000,
+          "protocol": "tcp",
+          "containerPort": 5000
+        }
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [
+        {
+          "name": "SERVER_PORT",
+          "value": "<SERVER_PORT>"
+        },
+        {
+          "name": "MASTER_DATASOURCE_URL",
+          "value": "<MASTER_DATASOURCE_URL>"
+        },
+        {
+          "name": "MASTER_DATASOURCE_USERNAME",
+          "value": "<MASTER_DATASOURCE_USERNAME>"
+        },
+        {
+          "name": "MASTER_DATASOURCE_PASSWORD",
+          "value": "<MASTER_DATASOURCE_PASSWORD>"
+        },
+        {
+          "name": "CLICK_PORT",
+          "value": "<CLICK_PORT>"
+        },
+        {
+          "name": "CLICK_HOST",
+          "value": "<CLICK_HOST>"
+        },
+        {
+          "name": "CLICK_DB",
+          "value": "<CLICK_DB>"
+        },
+        {
+          "name": "AMQP_HOST",
+          "value": "<AMQP_HOST>"
+        },
+        {
+          "name": "AMQP_PORT",
+          "value": "<AMQP_PORT>"
+        },
+        {
+          "name": "AMQP_USERNAME",
+          "value": "<AMQP_USERNAME>"
+        },
+        {
+          "name": "AMQP_PASSWORD",
+          "value": "<AMQP_PASSWORD>"
+        },
+        {
+          "name": "AMQP_ENABLE_SSL",
+          "value": "<AMQP_ENABLE_SSL>"
+        },
+        {
+          "name": "SQUIRREL_URL",
+          "value": "<SQUIRREL_URL>"
+        },
+        {
+          "name": "HUB_SPOT_KEY",
+          "value": "<HUB_SPOT_KEY>"
+        },
+        {
+          "name": "HUB_SPOT_URL",
+          "value": "<HUB_SPOT_URL>"
+        }
+      ],
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "secrets": null,
+      "dockerSecurityOptions": null,
+      "memory": null,
+      "memoryReservation": 2048,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "nginx:latest",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "orangutancluster-container"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "2048",
+  "taskRoleArn": null,
+  "family": "orangutancluster-task",
+  "pidMode": null,
+  "requiresCompatibilities": [
+    "EC2",
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "runtimePlatform": null,
+  "cpu": "1024",
+  "inferenceAccelerators": null,
+  "proxyConfiguration": null,
+  "volumes": []
+}
